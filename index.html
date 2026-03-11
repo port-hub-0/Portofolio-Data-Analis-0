@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auky Susanto's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Light Theme */
+        body.light {
+            background-color: white;
+            color: black;
+        }
+        /* Dark Theme */
+        body.dark {
+            background-color: #333;
+            color: white;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .photo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .projects, .contact {
+            margin: 20px 0;
+        }
+        .projects { display: flex; flex-wrap: wrap; justify-content: space-between; }
+        .project {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .project img { max-width: 100%; }
+        footer { text-align: center; margin: 20px 0; }
+        .theme-switch {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #666;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body class="light">
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-switch" onclick="toggleTheme()">Toggle Theme</button>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="photo">
+            <h1>Auky Susanto</h1>
+            <img src="Foto_Auky Susanto.jpg" alt="Auky Susanto" style="border-radius: 50%; width: 150px;">
+        </section>
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <div class="project" data-category="web">
+                <h3>Web Project 1</h3>
+                <img src="project_image_1.jpg" alt="Project 1">
+                <p>Details about project 1.</p>
+            </div>
+            <div class="project" data-category="data">
+                <h3>Data Analysis Project</h3>
+                <img src="project_image_2.jpg" alt="Project 2">
+                <p>Details about project 2.</p>
+            </div>
+            <!-- Add more projects as needed -->
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('web')">Web</button>
+            <button onclick="filterProjects('data')">Data Analysis</button>
+        </section>
+        <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+            <a href="CV_Auky_Susanto.pdf" download><button>Download CV</button></a>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2026 Auky Susanto</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        }
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                if (category === 'all' || project.dataset.category === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
