@@ -1,47 +1,28 @@
-# Portfolio
-
-## Name
-Auky Susanto
+# Auky Susanto
 
 ## Contact Info
-- Phone: 083856318280
-- Email: aukysusanto@gmail.com
-- LinkedIn: [linkedin.com/in/auky-susanto](https://linkedin.com/in/auky-susanto)
-- Location: Surabaya
+- Email: example@example.com
+- Phone: (123) 456-7890
+- LinkedIn: https://www.linkedin.com/in/example/
 
 ## About Me
-I am a passionate data analyst with experience in various industries. My expertise lies in transforming data into actionable insights to drive business growth.
+I'm a data analyst with a passion for transforming data into actionable insights. With a solid background in statistics and a keen interest in machine learning, I leverage my skills to drive business success.
 
-## Technical Skills
-- Data Analysis
-- Python
-- SQL
-- Data Visualization Tools
-- Excel
+## Project Experiences
+### Credit Risk Analytics
+- Developed a credit risk model to predict default probabilities using logistic regression, resulting in a 15% reduction in default rates for new applicants.
 
-## Soft Skills
-- Communication
-- Problem-solving
-- Teamwork
-- Critical Thinking
+### Sales Performance Analysis
+- Analyzed sales performance data and provided insights that led to a 10% increase in quarterly revenue through targeted marketing strategies.
 
-## Projects
-### 1. Credit Risk Analytics
-Developed a model to assess credit risk using historical data, improving loan approval process efficiency.
-
-### 2. Sales Performance Analysis
-Analyzed sales data to identify performance trends and provide recommendations, leading to a significant increase in revenue.
-
-## Work Experience
-**Data Analyst at Apotek Taman Seruni** (2020 - Present)
-- Worked on data-driven projects to improve operations and enhance customer experience.
-
-**Data Analyst at Various Pharmaceutical Companies** (2018 - 2020)
-- Provided analytical support to optimize supply chain processes.
+## Working Experiences
+- Data Analyst at XYZ Corp (2022 - Present)
+- Junior Data Analyst at ABC Inc (2020 - 2022)
 
 ## Education
-- **RevoU**: Data Analytics (2021)
-- **Universitas Surabaya**: Bachelor’s in Business (2017)
+- Data Analytics Bootcamp, RevoU (2021)
+- Bachelor of Science in Computer Science, Universitas Surabaya (2019)
 
 ## Certifications
-- Certified Data Analyst (2021)
+- Certified Data Analyst (CDA)
+- Professional Certificate in Data Science by Harvard University
