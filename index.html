@@ -295,8 +295,8 @@
                     responsibilities: "Sebagai Data Analyst, bertanggung jawab untuk melakukan pembersihan data, menjalankan Analisis Data Eksploratif (EDA), melakukan analisis korelasi, serta menyusun rekomendasi strategis untuk pengambilan keputusan berbasis data.",
                     scope: "Analisis berfokus pada data kunjungan selama 16 bulan (9.214 baris) yang mencakup demografi pasien, waktu admisi, departemen rujukan, waktu tunggu, dan skor kepuasan. Analisis tidak mencakup data keuangan atau identitas pribadi pasien (PII).",
                     method: "Metodologi yang digunakan meliputi Identifikasi Masalah Bisnis, Pembersihan Data (menangani missing values dan outliers), Analisis Data Eksploratif (EDA), dan Analisis Regresi Linear untuk melihat korelasi antar variabel.",
-                    tools: "Spreadsheet (Excel/Google Sheets), Tableau.",
-                    result: "Volume pasien tertinggi terjadi pada jam-jam tidak lazim, puncaknya pukul 23:00 (436 pasien). Ditemukan masalah sistemik pada kategori rujukan \"None\" yang mencakup 5.399 pasien dengan skor kepuasan di bawah rata-rata (4,95). Kelompok lansia (usia 60+) dan unit Renal merupakan segmen dengan tingkat kepuasan terendah (masing-masing 4,77 dan 4,57).",
+                    tools: "Spreadsheet (Excel/Google Sheets): Digunakan untuk pembersihan data, EDA, dan analisis statistik. <br> Tableau: Digunakan untuk pembuatan visualisasi data dan dasbor interaktif.",
+                    result: "Volume pasien tertinggi terjadi pada jam-jam tidak lazim, puncaknya pukul 23:00 (436 pasien). <br> Ditemukan masalah sistemik pada kategori rujukan \"None\" yang mencakup 5.399 pasien dengan skor kepuasan di bawah rata-rata (4,95). <br> Kelompok lansia (usia 60+) dan unit Renal merupakan segmen dengan tingkat kepuasan terendah (masing-masing 4,77 dan 4,57).",
                     recommendation: "Menerapkan Full Team pada shift malam (23:00 - 01:00) untuk menangani beban puncak, menambah petugas administrasi \"Rujukan Cepat\" pada jam 08:00 - 12:00 untuk memproses kategori \"None\", serta menerapkan jalur antrean prioritas bagi pasien lansia untuk meningkatkan indeks kepuasan.",
                     link: "Auky Susanto_Laporan Hasil Analisis_Data Analyst_RevoU.pdf"
                 }
@@ -317,7 +317,7 @@
                     responsibilities: "Acted as a Data Analyst responsible for identifying key factors influencing defaults, performing data cleaning on nearly 400k records, conducting Exploratory Data Analysis (EDA), and building a Logistic Regression propensity model.",
                     scope: "The analysis covers a loan dataset (2007-2016) with 396,030 entries and 27 variables. It focuses on factors like loan amount, interest rate, and income to predict defaults, excluding marketing or non-credit operational aspects.",
                     method: "Methodology included Data Collection, Data Cleaning (handling missing values, duplicates, and outliers), Exploratory Data Analysis (EDA), and building a Propensity Model using Logistic Regression.",
-                    tools: "Python (Google Colab), Tableau.",
+                    tools: "Python (Google Colab): Used for data cleaning, statistical analysis, and building the Logistic Regression model. <br> Tableau: Used for creating an interactive dashboard to visualize credit risk trends.",
                     result: "The Logistic Regression model achieved 84% accuracy and 80% recall. Analysis found that 60-month terms have higher default rates than 36-month terms, and debt consolidation/credit cards are the most common but riskiest loan purposes.",
                     recommendation: "Implement the propensity model for credit risk assessment and retrain it annually. Shift focus toward low-risk loan purposes (Wedding, Car, Education) through partnerships and consider discontinuing 60-month terms to prioritize quality-based growth.",
                     link: "[DEEPP] W14 - Milestone 4 Auky Susanto.pdf"
@@ -338,7 +338,7 @@
                     responsibilities: "Responsible for data preparation and relationship building between Personal Expenses, Merchant Master, and Annual Budget tables. Conducted analysis to measure overall spending pressure, identify cost levels, and detect budget pressure points.",
                     scope: "The analysis covers personal expense data, merchant information, and annual budgets. Key metrics include Total Expense (Rp508.5M), Total Transactions (1,000), Average per Transaction (Rp508.5k), and Budget Utilization (93.66%).",
                     method: "Utilized Data Preparation and Relationship modeling (Many-to-One cardinality) to link transactions to merchant categories. Conducted Category-Merchant hierarchy analysis and monthly trend analysis to identify spending spikes.",
-                    tools: "Tableau.",
+                    tools: "Tableau: Used for data visualization, dashboarding, and mapping offline spending locations.",
                     result: "Total annual spending reached Rp508,510,000, utilizing 93.66% of the budget. Overspending (>100% utilization) was identified in Travel, Subscription, Entertainment, and Education. A significant spending spike was observed every December due to seasonal factors.",
                     recommendation: "Optimize costs by pausing non-essential subscriptions (e.g., YouTube Premium, Netflix) and postponing trips. Implement in-app alerts when budget utilization exceeds 93.7% and provide a \"what-if\" slider for users to see the impact of reducing monthly spend by 5–20%.",
                     link: "Revofinance.pdf"
@@ -360,7 +360,7 @@
                     responsibilities: "Responsible for performing comprehensive data cleaning on card and user datasets, conducting Exploratory Data Analysis (EDA) to understand transaction behavior, and implementing unsupervised machine learning for customer segmentation.",
                     scope: "The analysis utilizes card and user datasets comprising approximately 5,599 records. It focuses on evaluating financial performance (net profit and fraud rates), understanding segment profitability, and generating strategic growth insights.",
                     method: "The project utilized K-Means Clustering as the primary segmentation method, validated by the Elbow Method and Silhouette Score (Optimal K=4). Other methods included Data Imputation, Outlier Handling, and Correlation Analysis (DTI vs. Credit Score).",
-                    tools: "Python (Google Colab), Spreadsheet (Excel/Google Sheets), Tableau.",
+                    tools: "Python (Google Colab): Used for data cleaning, statistical analysis, K-Means clustering, and outlier handling. <br> Spreadsheet (Excel/Google Sheets): Used for initial data cleaning, EDA, and calculating net profit. <br> Tableau: Used for data visualization and building the performance dashboards.",
                     result: "The analysis revealed four key segments: Cluster 3 (Secure) is the most profitable with the highest credit scores and transactions. Conversely, Cluster 0 (Leveraged) represents high income but high risk due to significant debt and long periods of inactivity. Total net profit was confirmed at Rp5.82B with a low overall fraud rate of 0.22%.",
                     recommendation: "Focus on upselling premium cards and wealth management to Cluster 3 (Secure) and \"The Whale\" outliers. For Cluster 0, implement debt consolidation and re-engagement campaigns, while applying risk mitigation and financial counseling for Cluster 1 (low income, high debt).",
                     link: "Revobank.pdf"
@@ -382,7 +382,7 @@
                     responsibilities: "Responsible for performing SQL-based data analysis to identify top-performing categories, analyzing factors driving revenue (units sold vs. customer count), and evaluating the impact of pricing strategies on sales.",
                     scope: "The analysis covers multiple key tables including Categories, Sales, Products, and Customers. It focuses on revenue after discounts, unit sales volume, unique customer counts per category, and repeat purchase rates.",
                     method: "Utilized SQL queries (BigQuery) involving Inner Joins, Aggregate Functions (SUM, COUNT DISTINCT, AVG), Window Functions (OVER), and Common Table Expressions (CTEs) to segment data and calculate performance metrics.",
-                    tools: "BigQuery (SQL).",
+                    tools: "BigQuery (SQL): Used as the primary environment for executing SQL queries and managing the dataset.",
                     result: "The \"Confections\" category leads with 12.87% of total revenue. There is a positive correlation between total units sold and revenue, but no significant relation exists between customer count and revenue. Repeat purchase rates are exceptionally high (>90%) across all categories.",
                     recommendation: "Invest more in the Confections category by increasing product variety and targeted promotions. Implement loyalty programs and \"twin date\" campaigns to capitalize on the high repeat purchase behavior of existing customers. For mass-market categories like Produce, use bundling and bulk-order discount tiers to drive higher order sizes.",
                     link: "Revogrocer1.pdf"
@@ -404,7 +404,7 @@
                     responsibilities: "Responsible for analyzing monthly inventory growth per category, calculating retention cohorts, and providing strategic recommendations to move the business from reactive to proactive inventory management.",
                     scope: "The analysis focuses on monthly inventory growth across all product categories and monthly customer retention cohorts. It aims to address systemic volatility and the financial impact of stock mismatches.",
                     method: "Utilized SQL for data extraction and analysis, focusing on Monthly Growth calculations and Cohort Analysis to track customer behavior over time.",
-                    tools: "SQL (BigQuery).",
+                    tools: "SQL (BigQuery): Primary tool for executing complex queries and managing the fashion e-commerce dataset.",
                     result: "Findings revealed high volatility in monthly inventory growth across all categories, leading to frequent stockouts or overstock risks. Furthermore, the customer retention rate was found to be extremely low, consistently under 3%.",
                     recommendation: "Implement better demand forecasting to smooth out replenishment cycles and align procurement with seasonal fashion peaks. Prioritize stabilizing high-value categories like Suits and Accessories, and develop a loyalty program with personalized recommendations to boost the sub-3% retention rate.",
                     link: "Thelook.pdf"
@@ -425,7 +425,7 @@
                     responsibilities: "Responsible for data cleaning, performing Exploratory Data Analysis (EDA) to compare campaign metrics, and conducting statistical hypothesis testing to evaluate the impact of UI/UX changes on user spending behavior.",
                     scope: "The project covers the evaluation of three previous campaign scenarios and an experiment on product detail page designs. It focuses on transaction values, campaign efficiency, and category performance, specifically within the provided e-commerce dataset.",
                     method: "Utilized Descriptive Analytics, Exploratory Data Analysis (EDA), and Statistical Hypothesis Testing (A/B Testing) to assess the significance of transaction value differences between the new and current page designs.",
-                    tools: "Google Sheets.",
+                    tools: "Google Sheets: Used for data cleaning, basic formulas, descriptive models, and statistical hypothesis testing. <br> Charts & Visualizations: Used within spreadsheets to perform EDA and compare main metrics.",
                     result: "The 12/12 campaign yielded the best business results among all scenarios. The A/B test confirmed that the new product detail page design generates a significantly higher average transaction value per user, with an 11% increase. Men’s Fashion was identified as the best-performing product category.",
                     recommendation: "Roll out the new product detail page design to all customers immediately to capture the 11% increase in transaction value. Replicate the 12/12 campaign scenario for future events and prioritize promotions or bundling strategies for the Men's Fashion category.",
                     link: "Tokobli1.pdf"
@@ -446,7 +446,7 @@
                     responsibilities: "Responsible for analyzing the correlation between multiple variables (Age, Income, Tenure, etc.) and yearly spending, performing factor analysis to isolate significant drivers, and providing actionable UI/UX and marketing recommendations.",
                     scope: "The analysis covers customer demographic data (Age, Income) and behavioral metrics (Tenure, Avg. Session Time, Total Promo, Bounce Rate) to determine their impact on Yearly Spending.",
                     method: "Utilized a Correlation Matrix to identify the strength of relationships between variables and Factor Analysis to isolate the most significant predictors of customer spending.",
-                    tools: "Google Sheets.",
+                    tools: "Google Sheets: Used for data management, calculating the correlation matrix, and descriptive modeling. <br> Statistical Analysis: Used to determine the significance of factors like Income and Bounce Rate.",
                     result: "The analysis concluded that Income, Tenure, Average Session Time, Total Promo, and Bounce Rate are the most significant factors affecting yearly spending. Conversely, Age was found to have a less significant direct impact compared to behavioral and financial metrics.",
                     recommendation: "Push premium products and upselling strategies to high-income segments. Increase session time by introducing interactive content like mini-games and personalized homepages. Reduce bounce rates and increase retention through a dedicated loyalty program and simplified navigation.",
                     link: "Tokobli2.pdf"
@@ -488,7 +488,7 @@
                     responsibilities: "Responsible for conducting a multi-dimensional diagnostic analysis, identifying loss-making states (Texas/Illinois), evaluating manufacturer profitability vs. order volume, and linking operational costs to bottom-line performance.",
                     scope: "The analysis covers a comprehensive dashboard of $733.2K in sales and $93.4K in profit. It dives into specific state-level losses, manufacturer-specific profit contributions, and sub-category performance metrics.",
                     method: "Utilized End-to-End Structured Business Analysis, including Diagnostic Analytics to isolate loss-making regions and Segment-Manufacturer Correlation to identify high-margin/low-volume anomalies.",
-                    tools: "Tableau, Advanced Data Analysis.",
+                    tools: "Tableau: Used for the Business Performance Dashboard and geographic profit mapping. <br> Advanced Data Analysis: Used for year-over-year (YoY) comparison and segment drill-downs.",
                     result: "Texas and Illinois were identified as major loss centers due to high fulfillment costs. The Corporate segment is underperforming (-13.6% profit), while the Canon manufacturer is highly efficient, providing top-tier profit from relatively low order volumes.",
                     recommendation: "Remodel and standardize SLAs for corporate clients to reduce manual handling costs. Implement geographic-specific pricing or fulfillment surcharges in Texas and Illinois to recover regional margins. Focus marketing efforts on the Canon product line and the Copiers sub-category to leverage high-margin growth.",
                     link: "Revoshion2.pdf"
