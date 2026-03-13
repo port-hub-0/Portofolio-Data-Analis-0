@@ -40,6 +40,7 @@
         .tag-viz { background: rgba(249, 115, 22, 0.1); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.2); }
         .tag-spreadsheet { background: rgba(5, 150, 105, 0.1); color: #059669; border: 1px solid rgba(5, 150, 105, 0.2); }
         .tag-business { background: rgba(148, 163, 184, 0.1); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.2); }
+        .tag-ml { background: rgba(236, 72, 153, 0.1); color: #ec4899; border: 1px solid rgba(236, 72, 153, 0.2); }
     </style>
 </head>
 <body id="home" class="bg-white text-slate-900 overflow-x-hidden">
@@ -77,7 +78,6 @@
                 
                 <div class="flex flex-wrap gap-4 mb-10">
                     <a href="#contact" class="px-8 py-4 bg-black text-white text-sm font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg">Hire Me</a>
-                    <!-- Revision 1: Open CV in new tab -->
                     <a href="CV ats.pdf" target="_blank" class="px-8 py-4 border-2 border-black text-sm font-bold uppercase tracking-widest hover:bg-slate-50 transition flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -160,7 +160,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold tracking-[0.4em] uppercase text-slate-100 border-b-2 border-blue-500 pb-2 inline-block">Project Experiences</h2>
             </div>
             
-            <!-- Revision 2: Minimalist Grid with larger gap -->
             <div class="grid md:grid-cols-2 gap-12" id="project-grid">
                 <!-- Projects will be injected here by JS -->
             </div>
@@ -291,20 +290,14 @@
                     { name: "Spreadsheet", class: "tag-spreadsheet" },
                     { name: "Tableau", class: "tag-viz" }
                 ],
-                bullets: [
-                    "Menganalisis dataset kunjungan pasien sebanyak 9.214 baris untuk mengidentifikasi lonjakan volume pasien.",
-                    "Mengevaluasi efisiensi operasional pada kategori rujukan \"None\" yang mencakup lebih dari 50% pasien.",
-                    "Merancang strategi peningkatan skor kepuasan dari 5,0 menjadi target 8,0.",
-                    "Mengembangkan dasbor interaktif menggunakan Tableau untuk memvisualisasikan tren harian."
-                ],
                 details: {
-                    background: "Rumah Sakit RevoMedic (Tipe B) menghadapi tantangan operasional dengan rata-rata waktu tunggu pasien mencapai 35 menit dan skor kepuasan pasien yang rendah di angka 5.",
-                    responsibilities: "Sebagai Data Analyst, bertanggung jawab untuk melakukan pembersihan data, menjalankan EDA, serta menyusun rekomendasi strategis.",
-                    scope: "Analisis berfokus pada data kunjungan selama 16 bulan (9.214 baris).",
-                    method: "Identifikasi Masalah Bisnis, Pembersihan Data, EDA, dan Analisis Regresi Linear.",
-                    tools: "Spreadsheet, Tableau.",
-                    result: "Volume pasien tertinggi pukul 23:00. Masalah sistemik pada kategori rujukan \"None\". Lansia memiliki kepuasan terendah.",
-                    recommendation: "Menerapkan Full Team pada shift malam, menambah petugas administrasi \"Rujukan Cepat\", dan jalur antrean prioritas lansia.",
+                    background: "Rumah Sakit RevoMedic (Tipe B) menghadapi tantangan operasional dengan rata-rata waktu tunggu pasien mencapai 35 menit dan skor kepuasan pasien yang rendah di angka 5 (skala 0-10). Manajemen memerlukan analisis data terhadap kunjungan periode September 2023 – Desember 2024 untuk meningkatkan efisiensi dan kualitas layanan.",
+                    responsibilities: "Sebagai Data Analyst, bertanggung jawab untuk melakukan pembersihan data, menjalankan Analisis Data Eksploratif (EDA), melakukan analisis korelasi, serta menyusun rekomendasi strategis untuk pengambilan keputusan berbasis data.",
+                    scope: "Analisis berfokus pada data kunjungan selama 16 bulan (9.214 baris) yang mencakup demografi pasien, waktu admisi, departemen rujukan, waktu tunggu, dan skor kepuasan. Analisis tidak mencakup data keuangan atau identitas pribadi pasien (PII).",
+                    method: "Metodologi yang digunakan meliputi Identifikasi Masalah Bisnis, Pembersihan Data (menangani missing values dan outliers), Analisis Data Eksploratif (EDA), dan Analisis Regresi Linear untuk melihat korelasi antar variabel.",
+                    tools: "Spreadsheet (Excel/Google Sheets), Tableau.",
+                    result: "Volume pasien tertinggi terjadi pada jam-jam tidak lazim, puncaknya pukul 23:00 (436 pasien). Ditemukan masalah sistemik pada kategori rujukan \"None\" yang mencakup 5.399 pasien dengan skor kepuasan di bawah rata-rata (4,95). Kelompok lansia (usia 60+) dan unit Renal merupakan segmen dengan tingkat kepuasan terendah (masing-masing 4,77 dan 4,57).",
+                    recommendation: "Menerapkan Full Team pada shift malam (23:00 - 01:00) untuk menangani beban puncak, menambah petugas administrasi \"Rujukan Cepat\" pada jam 08:00 - 12:00 untuk memproses kategori \"None\", serta menerapkan jalur antrean prioritas bagi pasien lansia untuk meningkatkan indeks kepuasan.",
                     link: "Auky Susanto_Laporan Hasil Analisis_Data Analyst_RevoU.pdf"
                 }
             },
@@ -316,22 +309,17 @@
                 image: "DEEP.jpeg",
                 tags: [
                     { name: "Python", class: "tag-python" },
-                    { name: "Machine Learning", class: "tag-eda" },
+                    { name: "Logistic Regression", class: "tag-ml" },
                     { name: "Tableau", class: "tag-viz" }
                 ],
-                bullets: [
-                    "Developed a Logistic Regression propensity model achieving 84% accuracy.",
-                    "Analyzed a comprehensive dataset of 396,030 loan entries.",
-                    "Formulated a strategic plan to reduce default rates from 20% to below 5%."
-                ],
                 details: {
-                    background: "LendingClub faced declining profits due to high default rates. Project aims to build propensity models for better risk assessment.",
-                    responsibilities: "Identifying key factors influencing defaults, data cleaning, EDA, and building Logistic Regression model.",
-                    scope: "Loan dataset (2007-2016) with 396,030 entries.",
-                    method: "Data Collection, Cleaning, EDA, and Propensity Modeling.",
+                    background: "LendingClub, a P2P lending platform turned digital bank, faced declining profits due to high default rates. The project aims to reverse this trend by using data analytics to build propensity models for better credit risk assessment.",
+                    responsibilities: "Acted as a Data Analyst responsible for identifying key factors influencing defaults, performing data cleaning on nearly 400k records, conducting Exploratory Data Analysis (EDA), and building a Logistic Regression propensity model.",
+                    scope: "The analysis covers a loan dataset (2007-2016) with 396,030 entries and 27 variables. It focuses on factors like loan amount, interest rate, and income to predict defaults, excluding marketing or non-credit operational aspects.",
+                    method: "Methodology included Data Collection, Data Cleaning (handling missing values, duplicates, and outliers), Exploratory Data Analysis (EDA), and building a Propensity Model using Logistic Regression.",
                     tools: "Python (Google Colab), Tableau.",
-                    result: "Model achieved 84% accuracy. 60-month terms have higher default rates.",
-                    recommendation: "Implement propensity model, shift focus toward low-risk loan purposes, and consider discontinuing 60-month terms.",
+                    result: "The Logistic Regression model achieved 84% accuracy and 80% recall. Analysis found that 60-month terms have higher default rates than 36-month terms, and debt consolidation/credit cards are the most common but riskiest loan purposes.",
+                    recommendation: "Implement the propensity model for credit risk assessment and retrain it annually. Shift focus toward low-risk loan purposes (Wedding, Car, Education) through partnerships and consider discontinuing 60-month terms to prioritize quality-based growth.",
                     link: "[DEEPP] W14 - Milestone 4 Auky Susanto.pdf"
                 }
             },
@@ -343,21 +331,16 @@
                 image: "tableau.jpeg",
                 tags: [
                     { name: "Tableau", class: "tag-viz" },
-                    { name: "Data Prep", class: "tag-eda" }
-                ],
-                bullets: [
-                    "Analyzed 1,000 transactions to evaluate spending behavior.",
-                    "Identified a high budget utilization rate of 93.66%.",
-                    "Recommended seven targeted cost-cutting strategies."
+                    { name: "EDA", class: "tag-eda" }
                 ],
                 details: {
-                    background: "Users needed a dashboard to support better financial decision-making and budget control.",
-                    responsibilities: "Data preparation and relationship building between expenses, merchants, and budget tables.",
-                    scope: "Personal expense data, merchant info, and annual budgets.",
-                    method: "Data Preparation, Relationship modeling, and Monthly trend analysis.",
+                    background: "RevoFinance is an Indonesian fintech company helping individuals manage personal expenses through a mobile app. Users needed a dashboard to support better financial decision-making, maintain effective budget control, and optimize costs based on their spending trends.",
+                    responsibilities: "Responsible for data preparation and relationship building between Personal Expenses, Merchant Master, and Annual Budget tables. Conducted analysis to measure overall spending pressure, identify cost levels, and detect budget pressure points.",
+                    scope: "The analysis covers personal expense data, merchant information, and annual budgets. Key metrics include Total Expense (Rp508.5M), Total Transactions (1,000), Average per Transaction (Rp508.5k), and Budget Utilization (93.66%).",
+                    method: "Utilized Data Preparation and Relationship modeling (Many-to-One cardinality) to link transactions to merchant categories. Conducted Category-Merchant hierarchy analysis and monthly trend analysis to identify spending spikes.",
                     tools: "Tableau.",
-                    result: "Total annual spending reached Rp508.5M. Overspending in Travel and Subscriptions.",
-                    recommendation: "Pause non-essential subscriptions, implement in-app alerts for budget thresholds.",
+                    result: "Total annual spending reached Rp508,510,000, utilizing 93.66% of the budget. Overspending (>100% utilization) was identified in Travel, Subscription, Entertainment, and Education. A significant spending spike was observed every December due to seasonal factors.",
+                    recommendation: "Optimize costs by pausing non-essential subscriptions (e.g., YouTube Premium, Netflix) and postponing trips. Implement in-app alerts when budget utilization exceeds 93.7% and provide a \"what-if\" slider for users to see the impact of reducing monthly spend by 5–20%.",
                     link: "Revofinance.pdf"
                 }
             },
@@ -369,48 +352,39 @@
                 image: "phyton.jpeg",
                 tags: [
                     { name: "Python", class: "tag-python" },
-                    { name: "K-Means", class: "tag-eda" },
+                    { name: "K-Means", class: "tag-ml" },
                     { name: "Tableau", class: "tag-viz" }
                 ],
-                bullets: [
-                    "Segmented customer base into 4 distinct clusters using K-Means.",
-                    "Achieved a positive net profit of Rp5,824,573,999.",
-                    "Identified \"The Whale\" outlier segment for premium banking."
-                ],
                 details: {
-                    background: "Bank aims to encourage existing customers to use products more frequently.",
-                    responsibilities: "Data cleaning, EDA, and implementing unsupervised machine learning for segmentation.",
-                    scope: "User datasets comprising 5,599 records.",
-                    method: "K-Means Clustering, Elbow Method, Silhouette Score.",
-                    tools: "Python, Spreadsheet, Tableau.",
-                    result: "Four key segments identified. Cluster 3 (Secure) is most profitable. Net profit Rp5.82B.",
-                    recommendation: "Upsell premium cards to Cluster 3, implement re-engagement for Cluster 0.",
+                    background: "RevoBank, an Indonesian-based bank, earns profit through Merchant Discount Rate (MDR) fees from credit card transactions. The company aims to encourage existing customers to use their products more frequently and increase transaction volume.",
+                    responsibilities: "Responsible for performing comprehensive data cleaning on card and user datasets, conducting Exploratory Data Analysis (EDA) to understand transaction behavior, and implementing unsupervised machine learning for customer segmentation.",
+                    scope: "The analysis utilizes card and user datasets comprising approximately 5,599 records. It focuses on evaluating financial performance (net profit and fraud rates), understanding segment profitability, and generating strategic growth insights.",
+                    method: "The project utilized K-Means Clustering as the primary segmentation method, validated by the Elbow Method and Silhouette Score (Optimal K=4). Other methods included Data Imputation, Outlier Handling, and Correlation Analysis (DTI vs. Credit Score).",
+                    tools: "Python (Google Colab), Spreadsheet (Excel/Google Sheets), Tableau.",
+                    result: "The analysis revealed four key segments: Cluster 3 (Secure) is the most profitable with the highest credit scores and transactions. Conversely, Cluster 0 (Leveraged) represents high income but high risk due to significant debt and long periods of inactivity. Total net profit was confirmed at Rp5.82B with a low overall fraud rate of 0.22%.",
+                    recommendation: "Focus on upselling premium cards and wealth management to Cluster 3 (Secure) and \"The Whale\" outliers. For Cluster 0, implement debt consolidation and re-engagement campaigns, while applying risk mitigation and financial counseling for Cluster 1 (low income, high debt).",
                     link: "Revobank.pdf"
                 }
             },
             {
                 id: 5,
                 title: "Sales Performance Analysis, RevoGrocer",
-                studyCase: "RevoGrocers",
+                studyCase: "RevoGrocer",
                 date: "Nov, 2025",
                 image: "Project SQL.jpeg",
                 tags: [
                     { name: "SQL", class: "tag-sql" },
-                    { name: "BigQuery", class: "tag-sql" }
-                ],
-                bullets: [
-                    "Identified top-performing category contributing 12% of revenue.",
-                    "Analyzed factors driving revenue (units sold vs customer count).",
-                    "Proposed bundling strategies to increase UPT."
+                    { name: "BigQuery", class: "tag-sql" },
+                    { name: "EDA", class: "tag-eda" }
                 ],
                 details: {
-                    background: "Grocery retail business aims to optimize sales strategies and maximize revenue.",
-                    responsibilities: "SQL-based analysis to identify top categories and evaluate pricing impact.",
-                    scope: "Categories, Sales, Products, and Customers tables.",
-                    method: "SQL queries (Inner Joins, Aggregate Functions, CTEs).",
+                    background: "RevoGrocers is a fictional grocery retail business operating across multiple locations. The company aims to optimize its sales strategies, improve customer experience, and maximize revenue by leveraging data-driven insights from its grocery sales dataset.",
+                    responsibilities: "Responsible for performing SQL-based data analysis to identify top-performing categories, analyzing factors driving revenue (units sold vs. customer count), and evaluating the impact of pricing strategies on sales.",
+                    scope: "The analysis covers multiple key tables including Categories, Sales, Products, and Customers. It focuses on revenue after discounts, unit sales volume, unique customer counts per category, and repeat purchase rates.",
+                    method: "Utilized SQL queries (BigQuery) involving Inner Joins, Aggregate Functions (SUM, COUNT DISTINCT, AVG), Window Functions (OVER), and Common Table Expressions (CTEs) to segment data and calculate performance metrics.",
                     tools: "BigQuery (SQL).",
-                    result: "Confections leads revenue. Repeat purchase rates >90%.",
-                    recommendation: "Invest in Confections, implement loyalty programs and twin date campaigns.",
+                    result: "The \"Confections\" category leads with 12.87% of total revenue. There is a positive correlation between total units sold and revenue, but no significant relation exists between customer count and revenue. Repeat purchase rates are exceptionally high (>90%) across all categories.",
+                    recommendation: "Invest more in the Confections category by increasing product variety and targeted promotions. Implement loyalty programs and \"twin date\" campaigns to capitalize on the high repeat purchase behavior of existing customers. For mass-market categories like Produce, use bundling and bulk-order discount tiers to drive higher order sizes.",
                     link: "Revogrocer1.pdf"
                 }
             },
@@ -422,21 +396,17 @@
                 image: "Project SQL2.jpeg",
                 tags: [
                     { name: "SQL", class: "tag-sql" },
+                    { name: "BigQuery", class: "tag-sql" },
                     { name: "Cohort Analysis", class: "tag-eda" }
                 ],
-                bullets: [
-                    "Analyzed systemic inventory volatility using SQL.",
-                    "Discovered extremely low retention rate (<3%).",
-                    "Proposed forecast-driven procurement."
-                ],
                 details: {
-                    background: "Fashion e-commerce faces challenges with inventory growth and poor loyalty.",
-                    responsibilities: "Analyzing inventory growth and calculating retention cohorts.",
-                    scope: "Inventory growth and customer retention cohorts.",
-                    method: "SQL extraction, Monthly Growth calculations, Cohort Analysis.",
+                    background: "TheLook is a fashion e-commerce retailer that manages clothing and accessories across global distribution centers. The company faces challenges with highly volatile inventory growth and poor customer loyalty, requiring a data-driven strategy to optimize stock levels and retention.",
+                    responsibilities: "Responsible for analyzing monthly inventory growth per category, calculating retention cohorts, and providing strategic recommendations to move the business from reactive to proactive inventory management.",
+                    scope: "The analysis focuses on monthly inventory growth across all product categories and monthly customer retention cohorts. It aims to address systemic volatility and the financial impact of stock mismatches.",
+                    method: "Utilized SQL for data extraction and analysis, focusing on Monthly Growth calculations and Cohort Analysis to track customer behavior over time.",
                     tools: "SQL (BigQuery).",
-                    result: "High volatility in inventory growth. Retention under 3%.",
-                    recommendation: "Implement demand forecasting, develop loyalty programs.",
+                    result: "Findings revealed high volatility in monthly inventory growth across all categories, leading to frequent stockouts or overstock risks. Furthermore, the customer retention rate was found to be extremely low, consistently under 3%.",
+                    recommendation: "Implement better demand forecasting to smooth out replenishment cycles and align procurement with seasonal fashion peaks. Prioritize stabilizing high-value categories like Suits and Accessories, and develop a loyalty program with personalized recommendations to boost the sub-3% retention rate.",
                     link: "Thelook.pdf"
                 }
             },
@@ -450,19 +420,14 @@
                     { name: "Spreadsheet", class: "tag-spreadsheet" },
                     { name: "A/B Testing", class: "tag-eda" }
                 ],
-                bullets: [
-                    "Executed A/B test achieving 11% increase in transaction value.",
-                    "Identified 12/12 campaign as top performer.",
-                    "Validated statistical significance for UI rollout."
-                ],
                 details: {
-                    background: "E-commerce needs to evaluate twin date campaigns and UI/UX changes.",
-                    responsibilities: "Data cleaning, EDA, and statistical hypothesis testing.",
-                    scope: "Campaign scenarios and product page experiments.",
-                    method: "Descriptive Analytics, EDA, A/B Testing.",
+                    background: "TokoBli is a leading Indonesian e-commerce platform. The business needs to evaluate the effectiveness of its major \"twin date\" sales campaigns and determine if a new product detail page design significantly improves transaction values compared to the current version.",
+                    responsibilities: "Responsible for data cleaning, performing Exploratory Data Analysis (EDA) to compare campaign metrics, and conducting statistical hypothesis testing to evaluate the impact of UI/UX changes on user spending behavior.",
+                    scope: "The project covers the evaluation of three previous campaign scenarios and an experiment on product detail page designs. It focuses on transaction values, campaign efficiency, and category performance, specifically within the provided e-commerce dataset.",
+                    method: "Utilized Descriptive Analytics, Exploratory Data Analysis (EDA), and Statistical Hypothesis Testing (A/B Testing) to assess the significance of transaction value differences between the new and current page designs.",
                     tools: "Google Sheets.",
-                    result: "12/12 campaign best results. New UI increased value by 11%.",
-                    recommendation: "Roll out new page design, replicate 12/12 scenario.",
+                    result: "The 12/12 campaign yielded the best business results among all scenarios. The A/B test confirmed that the new product detail page design generates a significantly higher average transaction value per user, with an 11% increase. Men’s Fashion was identified as the best-performing product category.",
+                    recommendation: "Roll out the new product detail page design to all customers immediately to capture the 11% increase in transaction value. Replicate the 12/12 campaign scenario for future events and prioritize promotions or bundling strategies for the Men's Fashion category.",
                     link: "Tokobli1.pdf"
                 }
             },
@@ -476,19 +441,14 @@
                     { name: "Spreadsheet", class: "tag-spreadsheet" },
                     { name: "Factor Analysis", class: "tag-eda" }
                 ],
-                bullets: [
-                    "Identified five critical factors impacting customer spending.",
-                    "Correlated session time with revenue growth.",
-                    "Proposed interactive mini-games to boost engagement."
-                ],
                 details: {
-                    background: "Business needs to understand underlying drivers of customer spending.",
-                    responsibilities: "Correlation analysis and factor analysis to isolate drivers.",
-                    scope: "Demographic data and behavioral metrics.",
-                    method: "Correlation Matrix, Factor Analysis.",
+                    background: "As a continuation of the TokoBli analysis, the business needs to understand the underlying drivers of customer spending. By identifying which demographic and behavioral factors most strongly influence annual expenditures, TokoBli can tailor its marketing and platform features to maximize high-value customer activity.",
+                    responsibilities: "Responsible for analyzing the correlation between multiple variables (Age, Income, Tenure, etc.) and yearly spending, performing factor analysis to isolate significant drivers, and providing actionable UI/UX and marketing recommendations.",
+                    scope: "The analysis covers customer demographic data (Age, Income) and behavioral metrics (Tenure, Avg. Session Time, Total Promo, Bounce Rate) to determine their impact on Yearly Spending.",
+                    method: "Utilized a Correlation Matrix to identify the strength of relationships between variables and Factor Analysis to isolate the most significant predictors of customer spending.",
                     tools: "Google Sheets.",
-                    result: "Income, Tenure, and Session Time are most significant.",
-                    recommendation: "Upsell to high-income segments, increase session time via mini-games.",
+                    result: "The analysis concluded that Income, Tenure, Average Session Time, Total Promo, and Bounce Rate are the most significant factors affecting yearly spending. Conversely, Age was found to have a less significant direct impact compared to behavioral and financial metrics.",
+                    recommendation: "Push premium products and upselling strategies to high-income segments. Increase session time by introducing interactive content like mini-games and personalized homepages. Reduce bounce rates and increase retention through a dedicated loyalty program and simplified navigation.",
                     link: "Tokobli2.pdf"
                 }
             },
@@ -499,22 +459,17 @@
                 date: "Oct, 2025",
                 image: "UBP1.jpeg",
                 tags: [
-                    { name: "Business Acumen", class: "tag-business" },
+                    { name: "Business Analysis", class: "tag-business" },
                     { name: "Diagnostic", class: "tag-eda" }
                 ],
-                bullets: [
-                    "Diagnosed profit margin decline despite 20.4% sales growth.",
-                    "Identified aggressive discounting as margin driver.",
-                    "Proposed tiered pricing model."
-                ],
                 details: {
-                    background: "Sales are growing but profitability is under pressure.",
-                    responsibilities: "Analyzing sales/profit trends and diagnosing inefficiencies.",
-                    scope: "$733.2K in sales across 1,687 orders.",
-                    method: "Strategic Financial Analysis, Diagnostic Analytics.",
+                    background: "RevoShion is experiencing a paradoxical situation where sales and order volumes are growing (up 20.4% and 28.3% respectively), but overall profitability is under pressure. The business needs to identify the root causes of this margin leakage to ensure sustainable growth.",
+                    responsibilities: "Responsible for analyzing sales and profit trends across segments (Consumer, Corporate, Home Office), evaluating manufacturer and category performance, and diagnosing inefficiencies in the fulfillment and pricing structures.",
+                    scope: "The analysis covers $733.2K in sales across 1,687 orders and 693 customers. It specifically looks at Profit by State, Segment, Category, Sub-Category, and Top Manufacturers (e.g., Canon, Xerox, GBC).",
+                    method: "Utilized Strategic Financial Analysis and Diagnostic Analytics to compare Year-over-Year (YoY) performance and identify outliers in the discount and fulfillment processes.",
                     tools: "Business Acumen.",
-                    result: "Profit grew slower than sales. Corporate segment diluted margins.",
-                    recommendation: "Shift focus to high-margin categories, reassess discount policy.",
+                    result: "While sales grew by 20.4%, profit only grew by 14.2%, indicating declining efficiency. The Corporate segment and specific low-margin categories were found to be the main contributors to profit dilution. High fulfillment costs for manual order handling further reduced the bottom line.",
+                    recommendation: "Shift product focus by pushing promotions on high-margin categories and limiting them on low-margin ones. Reassess the discount policy for corporate clients by implementing a discount cap or minimum margin threshold. Automate fulfillment workflows and renegotiate shipping rates to reduce operational overhead.",
                     link: "Revoshion1.pdf"
                 }
             },
@@ -528,19 +483,14 @@
                     { name: "Tableau", class: "tag-viz" },
                     { name: "Business Analysis", class: "tag-business" }
                 ],
-                bullets: [
-                    "Identified regional \"profit drains\" in Texas and Illinois.",
-                    "Analyzed manufacturer performance (Canon vs others).",
-                    "Diagnosed performance gap in Corporate segment."
-                ],
                 details: {
-                    background: "Deep-dive analysis to stop margin leakage.",
-                    responsibilities: "Multi-dimensional diagnostic analysis and operational cost linking.",
-                    scope: "$733.2K sales and $93.4K profit dashboard.",
-                    method: "End-to-End Structured Business Analysis.",
+                    background: "Building on initial findings, RevoShion needed a deep-dive analysis to understand why a 20.4% increase in sales ($733.2K) was not translating into proportional profit growth. The business required a granular look at geographic, manufacturer, and segment-level data to stop margin leakage.",
+                    responsibilities: "Responsible for conducting a multi-dimensional diagnostic analysis, identifying loss-making states (Texas/Illinois), evaluating manufacturer profitability vs. order volume, and linking operational costs to bottom-line performance.",
+                    scope: "The analysis covers a comprehensive dashboard of $733.2K in sales and $93.4K in profit. It dives into specific state-level losses, manufacturer-specific profit contributions, and sub-category performance metrics.",
+                    method: "Utilized End-to-End Structured Business Analysis, including Diagnostic Analytics to isolate loss-making regions and Segment-Manufacturer Correlation to identify high-margin/low-volume anomalies.",
                     tools: "Tableau, Advanced Data Analysis.",
-                    result: "Texas/Illinois major loss centers. Canon highly efficient.",
-                    recommendation: "Standardize SLAs for corporate clients, implement geographic pricing.",
+                    result: "Texas and Illinois were identified as major loss centers due to high fulfillment costs. The Corporate segment is underperforming (-13.6% profit), while the Canon manufacturer is highly efficient, providing top-tier profit from relatively low order volumes.",
+                    recommendation: "Remodel and standardize SLAs for corporate clients to reduce manual handling costs. Implement geographic-specific pricing or fulfillment surcharges in Texas and Illinois to recover regional margins. Focus marketing efforts on the Canon product line and the Copiers sub-category to leverage high-margin growth.",
                     link: "Revoshion2.pdf"
                 }
             }
@@ -618,7 +568,6 @@
             document.body.classList.remove('modal-open');
         }
 
-        // Revision 2: Minimalist Card Rendering
         function initProjects() {
             const grid = document.getElementById('project-grid');
             projects.forEach((p, index) => {
@@ -628,15 +577,12 @@
                          data-aos="fade-up" 
                          data-aos-delay="${index * 50}">
                         
-                        <!-- Image Container -->
                         <div class="aspect-video bg-slate-950/50 flex items-center justify-center overflow-hidden">
                             <img src="${p.image}" alt="${p.title}" class="w-full h-full object-contain group-hover:scale-105 transition duration-700">
                         </div>
 
-                        <!-- Minimalist Content -->
                         <div class="p-8">
                             <div class="flex items-start gap-3 mb-3">
-                                <!-- Folder Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                 </svg>
@@ -645,7 +591,6 @@
                             
                             <p class="text-sm text-slate-400 mb-6 font-medium italic">Study Case of ${p.studyCase}</p>
                             
-                            <!-- Pill Tags -->
                             <div class="flex flex-wrap gap-2 mb-6">
                                 ${p.tags.map(tag => `<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${tag.class}">${tag.name}</span>`).join('')}
                             </div>
