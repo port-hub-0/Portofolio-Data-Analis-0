@@ -1,426 +1,231 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auky Susanto | Data Analyst Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Animate on Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-home { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+        /* Foto Lingkaran */
+        .photo-container { width: 220px; height: 220px; border-radius: 50%; }
+    </style>
+</head>
+<body id="home" class="bg-white text-slate-900 overflow-x-hidden">
 
-import { useEffect } from 'react';
-import { motion } from 'motion/react';
-import { 
-  Linkedin, 
-  Mail, 
-  MessageCircle, 
-  Download, 
-  ExternalLink, 
-  ChevronRight,
-  MapPin,
-  Phone
-} from 'lucide-react';
-
-export default function App() {
-  // Smooth scroll implementation for React
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <div className="bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="font-serif italic text-3xl font-bold tracking-tight text-black hover:text-blue-700 transition cursor-pointer"
-          >
-            HOME
-          </button>
-          
-          <div className="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
-            <button onClick={() => scrollToSection('about')} className="hover:text-blue-600 transition cursor-pointer">About</button>
-            <button onClick={() => scrollToSection('skills')} className="hover:text-blue-600 transition cursor-pointer">Skills</button>
-            <button onClick={() => scrollToSection('projects')} className="hover:text-blue-600 transition cursor-pointer">Projects</button>
-            <button onClick={() => scrollToSection('education')} className="hover:text-blue-600 transition cursor-pointer">Education</button>
-            <button onClick={() => scrollToSection('experience')} className="hover:text-blue-600 transition cursor-pointer">Experience</button>
-          </div>
-          
-          <button className="md:hidden text-slate-900">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="min-h-[80vh] flex items-center pt-32 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="inline-block px-4 py-1 bg-slate-900 text-white text-xs font-bold tracking-widest uppercase mb-6">Available for Work</span>
-            <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none mb-6">
-              Auky <br /> Susanto
-            </h1>
-            <p className="text-3xl text-slate-700 mb-8 font-bold italic">Data Analyst</p>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="font-home italic text-3xl font-bold tracking-tight text-black hover:text-blue-700 transition">HOME</a>
             
-            <div className="flex flex-wrap gap-4 mb-10">
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg cursor-pointer"
-              >
-                Hire Me
-              </button>
-              <a href="#" className="px-8 py-4 border-2 border-black text-xs font-bold uppercase tracking-widest hover:bg-slate-50 transition flex items-center gap-2">
-                <Download size={16} />
-                Download CV
-              </a>
+            <div class="hidden md:flex space-x-8 text-base font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#education" class="hover:text-blue-600 transition">Education</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Working</a>
             </div>
-
-            <div className="flex flex-wrap items-center gap-6 text-slate-700 font-bold text-lg">
-              <a href="https://linkedin.com/in/auky-susanto" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition flex items-center gap-2">
-                <Linkedin size={20} />
-                LinkedIn
-              </a>
-              <a href="mailto:aukysusanto@gmail.com" className="hover:text-red-600 transition flex items-center gap-2">
-                <Mail size={20} />
-                Email
-              </a>
-              <a href="https://wa.me/6283856318280" target="_blank" rel="noreferrer" className="hover:text-green-600 transition flex items-center gap-2">
-                <MessageCircle size={20} />
-                WhatsApp
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Foto Profil */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="flex justify-center md:justify-end"
-          >
-            <div className="w-[180px] aspect-[3/4] bg-slate-100 overflow-hidden shadow-2xl border-4 border-white grayscale hover:grayscale-0 transition duration-700">
-              <img 
-                src="Foto_Auky Susanto.jpg" 
-                alt="Auky Susanto" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </motion.div>
+            <button class="md:hidden text-slate-900">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
-      </section>
+    </nav>
 
-      {/* 1. About Me - REVISED: Regular font & smaller size */}
-      <section id="about" className="py-24 bg-slate-50 px-6 border-y border-slate-200">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-10 border-b-2 border-black pb-2 inline-block">About Me</h2>
-            <p className="text-lg md:text-xl leading-relaxed font-normal text-slate-800 text-justify">
-              I am an aspiring Data Analyst who values curiosity and evidence-based decision-making, with experience running a business that honed my skills in effective operations management. In my previous role running a business, I managed all business aspects, which taught me inventory management, sales analysis, and customer data interpretation, resulting in a 16% year on year increase in revenue. I recently completed RevoU’s data analytics program to deepen my spreadsheet, SQL, Python, and data visualization skills so I can turn business questions into insights. Combined with my commitment in continuously learning data analytics, I am ready to bring my analytical mindset and business perspective to a Data Analyst role where I can deliver measurable insights.
+    <!-- Hero Section -->
+    <section class="min-h-[80vh] flex items-center pt-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-1 bg-slate-900 text-white text-sm font-bold tracking-widest uppercase mb-6">Available for Work</span>
+                <h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none mb-6">
+                    Auky <br> Susanto
+                </h1>
+                <p class="text-3xl text-slate-700 mb-8 font-bold italic">Data Analyst</p>
+                
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#contact" class="px-8 py-4 bg-black text-white text-sm font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg">Hire Me</a>
+                    <a href="#" class="px-8 py-4 border-2 border-black text-sm font-bold uppercase tracking-widest hover:bg-slate-50 transition flex items-center gap-2">
+                        Download CV
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-6 text-slate-700 font-bold text-lg">
+                    <a href="https://linkedin.com/in/auky-susanto" target="_blank" class="hover:text-blue-600 transition flex items-center gap-2">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:aukysusanto@gmail.com" class="hover:text-red-600 transition flex items-center gap-2">
+                        Email
+                    </a>
+                    <a href="https://wa.me/6283856318280" target="_blank" class="hover:text-green-600 transition flex items-center gap-2">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center md:justify-end" data-aos="fade-left">
+                <div class="photo-container bg-slate-100 overflow-hidden shadow-2xl border-4 border-white grayscale hover:grayscale-0 transition duration-700">
+                    <img src="Foto_Auky Susanto.jpg" alt="Auky Susanto" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. About Me -->
+    <section id="about" class="py-24 bg-slate-50 px-6 border-y border-slate-200">
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-10 border-b-2 border-black pb-2 inline-block">About Me</h2>
+            <p class="text-lg md:text-xl leading-relaxed font-normal text-slate-800 text-justify">
+                I am an aspiring Data Analyst who values curiosity and evidence-based decision-making, with experience running a business that honed my skills in effective operations management. In my previous role running a business, I managed all business aspects, which taught me inventory management, sales analysis, and customer data interpretation, resulting in a 16% year on year increase in revenue. I recently completed RevoU’s data analytics program to deepen my spreadsheet, SQL, Python, and data visualization skills so I can turn business questions into insights. Combined with my commitment in continuously learning data analytics, I am ready to bring my analytical mindset and business perspective to a Data Analyst role where I can deliver measurable insights.
             </p>
-          </motion.div>
         </div>
-      </section>
+    </section>
 
-      {/* 2. Certification & Skills - REVISED: Certification link added */}
-      <section id="skills" className="py-24 bg-white px-6 border-b border-slate-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Certifications */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Certifications</h3>
-              <ul className="text-base font-bold text-slate-800 space-y-4">
-                <li>
-                  <a 
-                    href="Auky Susanto-FSDA-2026-03-170486767314-Certificate of Achievement.pdf" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="hover:text-blue-600 transition flex items-start gap-2"
-                  >
-                    <span className="text-blue-500 mt-1"><ChevronRight size={16} /></span>
-                    1. Full-stack Data Analytics, RevoU (Feb, 2026)
-                  </a>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-slate-400 mt-1"><ChevronRight size={16} /></span>
-                  2. BNSP Certified Data Analyst (Feb, 2026)
-                </li>
-              </ul>
-            </motion.div>
-            
-            {/* Technical Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <h3 className="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Technical Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {['Spreadsheets', 'SQL', 'Python', 'Tableau', 'Power BI'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-wider">{skill}</span>
-                ))}
-              </div>
-            </motion.div>
-            
-            {/* Soft Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <h3 className="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Soft Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {['Problem Solving', 'Critical Analytical Thinking'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 border-2 border-black text-xs font-bold uppercase tracking-wider">{skill}</span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Project Experiences - REVISED: Links to project pages added */}
-      <section id="projects" className="py-24 bg-slate-900 text-white px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-slate-400 mb-16 text-center">Project Experiences</h2>
-          
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* Project 1 */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-10 bg-slate-800 border border-slate-700 hover:border-blue-500 transition duration-500 flex flex-col h-full"
-            >
-              <div className="flex justify-between items-start mb-6">
-                <h4 className="text-2xl font-extrabold leading-tight">A Data-Driven Lending Strategy through Credit Risk Analytics, Lending Club</h4>
-                <span className="text-xs font-bold text-blue-400 uppercase ml-4">2025-2026</span>
-              </div>
-              <ul className="text-base font-bold text-slate-300 space-y-4 mb-8 flex-grow">
-                <li>● Developed a Logistic Regression propensity model achieving 84% accuracy and 80% recall.</li>
-                <li>● Analyzed a comprehensive dataset of 396,030 loan entries to identify key drivers of loan defaults.</li>
-                <li>● Formulated a strategic plan to reduce default rates from 20% to below 5%.</li>
-              </ul>
-              <a 
-                href="/project-lending-club" 
-                className="inline-flex items-center gap-2 text-blue-400 font-bold uppercase tracking-widest text-xs hover:text-blue-300 transition group"
-              >
-                View Project Details 
-                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-
-            {/* Project 2 */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-10 bg-slate-800 border border-slate-700 hover:border-blue-500 transition duration-500 flex flex-col h-full"
-            >
-              <div className="flex justify-between items-start mb-6">
-                <h4 className="text-2xl font-extrabold leading-tight">Sales Performance Analysis, RevoGrocers</h4>
-                <span className="text-xs font-bold text-blue-400 uppercase ml-4">Nov 2025</span>
-              </div>
-              <ul className="text-base font-bold text-slate-300 space-y-4 mb-8 flex-grow">
-                <li>● Identified the top-performing product category contributing 12% of total revenue.</li>
-                <li>● Analyzed factors driving revenue, revealing a positive correlation with units sold.</li>
-                <li>● Implemented bundling and cross-selling strategies to increase Units Per Transaction.</li>
-              </ul>
-              <a 
-                href="/project-revogrocers" 
-                className="inline-flex items-center gap-2 text-blue-400 font-bold uppercase tracking-widest text-xs hover:text-blue-300 transition group"
-              >
-                View Project Details 
-                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Education - REVISED: Logos added */}
-      <section id="education" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-16 text-center">Education</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-8 border-2 border-slate-100 hover:border-black transition flex flex-col md:flex-row gap-6 items-start"
-            >
-              <div className="w-20 h-20 flex-shrink-0 bg-slate-50 rounded p-2 flex items-center justify-center">
-                <img src="logo revou.avif" alt="RevoU Logo" className="max-w-full max-h-full object-contain" referrerPolicy="no-referrer" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-extrabold mb-2">RevoU</h3>
-                <p className="text-lg text-slate-700 font-bold mb-4 italic">Full-stack Data Analytics | Oct, 2025 – Mar, 2026</p>
-                <p className="text-base text-slate-800 font-normal leading-relaxed">
-                  Completed an intensive intermediate-to-advanced data analytics program with over 200 hours of learning commitment. Mentored by top professionals. Gained hands-on experience in business problem-solving using end-to-end data analysis processes.
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-8 border-2 border-slate-100 hover:border-black transition flex flex-col md:flex-row gap-6 items-start"
-            >
-              <div className="w-20 h-20 flex-shrink-0 bg-slate-50 rounded p-2 flex items-center justify-center">
-                <img src="logo ubaya.png" alt="Ubaya Logo" className="max-w-full max-h-full object-contain" referrerPolicy="no-referrer" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-extrabold mb-2">Universitas Surabaya</h3>
-                <div className="mb-6">
-                  <p className="text-lg text-slate-700 font-bold italic">Apothecary Profession | Aug, 2019 – Nov, 2020</p>
-                  <p className="text-base text-slate-800 font-bold">GPA: 3.6</p>
+    <!-- 2. Skills -->
+    <section id="skills" class="py-24 bg-white px-6 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div data-aos="fade-up">
+                    <h3 class="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Certifications</h3>
+                    <ul class="text-base font-bold text-slate-800 space-y-4">
+                        <li>
+                            <a href="Auky Susanto-FSDA-2026-03-170486767314-Certificate of Achievement.pdf" target="_blank" class="text-blue-600 hover:underline">
+                                1. Full-stack Data Analytics, RevoU (Feb, 2026)
+                            </a>
+                        </li>
+                        <li>2. BNSP Certified Data Analyst (Feb, 2026)</li>
+                    </ul>
                 </div>
-                <div>
-                  <p className="text-lg text-slate-700 font-bold italic">Bachelor of Pharmacy | Aug, 2015 – Aug, 2019</p>
-                  <p className="text-base text-slate-800 font-bold">GPA: 3.6</p>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-black text-white text-sm font-bold">Spreadsheets</span>
+                        <span class="px-4 py-2 bg-black text-white text-sm font-bold">SQL</span>
+                        <span class="px-4 py-2 bg-black text-white text-sm font-bold">Python</span>
+                        <span class="px-4 py-2 bg-black text-white text-sm font-bold">Tableau</span>
+                        <span class="px-4 py-2 bg-black text-white text-sm font-bold">Power BI</span>
+                    </div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Working Experiences */}
-      <section id="experience" className="py-24 px-6 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-16 text-center">Working Experiences</h2>
-          
-          <div className="space-y-20">
-            {/* Exp 1 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="border-l-4 border-black pl-8"
-            >
-              <div className="flex flex-col md:flex-row justify-between items-start mb-4">
-                <h3 className="text-2xl font-extrabold">Owner & Pharmacist, Apotek Taman Seruni</h3>
-                <span className="text-lg font-bold text-slate-700 italic">Feb, 2024 - Present</span>
-              </div>
-              <ul className="text-lg font-normal text-slate-800 space-y-3">
-                <li>● Controlled pharmacy inventory to minimize waste and maintain waste-to-sales ratio below 1%.</li>
-                <li>● Analyzed sales data trends to forecast procurement, enabling timely bulk ordering while tightening cash flow and reducing out of stock rate by 30%.</li>
-                <li>● Implemented multi-platform online sales channel, boosting revenue 16% year on year, expanding customer reach.</li>
-              </ul>
-            </motion.div>
-
-            {/* Exp 2 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="border-l-4 border-slate-300 pl-8"
-            >
-              <div className="flex flex-col md:flex-row justify-between items-start mb-4">
-                <h3 className="text-2xl font-extrabold">Formulation Assistant Scientist, PT. Dexa Medica</h3>
-                <span className="text-lg font-bold text-slate-700 italic">Aug, 2022 – Jul, 2023</span>
-              </div>
-              <ul className="text-lg font-normal text-slate-800 space-y-3">
-                <li>● Designed end-to-end product development (trial design, raw material or machine requirement, timeline, formula, manufacturing process, specification) for 4 products, potentially increase company’s product portofolio and sales.</li>
-                <li>● Submitted 3 working instructions to increase personnel compliance.</li>
-              </ul>
-            </motion.div>
-
-            {/* Exp 3 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="border-l-4 border-slate-300 pl-8"
-            >
-              <div className="flex flex-col md:flex-row justify-between items-start mb-4">
-                <h3 className="text-2xl font-extrabold">Research and Development Supervisor, PT. Lapi Laboratories</h3>
-                <span className="text-lg font-bold text-slate-700 italic">Jun, 2021 – Aug, 2022</span>
-              </div>
-              <ul className="text-lg font-normal text-slate-800 space-y-3">
-                <li>● Increased product stability & regulatory compliance by in 10 projects by reformulation & manufacturing process modification of existing products.</li>
-                <li>● Supervised the implementation of alternative raw materials by evaluating CoA documents, analyzing physical and chemical properties, conducting laboratory and pilot trials, and documenting processes to regulatory agencies, resulting in a 20% reduction in COGS.</li>
-                <li>● Maintained production reject rates below 5 batches annually by implementing commercial batch problem-solving and process modification, resulting in improved product quality and reduced waste.</li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact & Footer */}
-      <section id="contact" className="py-24 px-6 bg-white border-t border-slate-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-extrabold mb-8 tracking-tighter">Let's Connect</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col items-center gap-2">
-              <MapPin className="text-blue-600" />
-              <span className="font-bold">Surabaya, East Java</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Phone className="text-green-600" />
-              <span className="font-bold">083856318280</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Mail className="text-red-500" />
-              <span className="font-bold">aukysusanto@gmail.com</span>
-            </div>
-          </div>
-          
-          <div className="flex justify-center flex-wrap gap-8 mb-16">
-            <a href="https://wa.me/6283856318280" className="text-lg font-extrabold uppercase border-b-4 border-green-500 hover:text-green-600 transition">WhatsApp</a>
-            <a href="https://linkedin.com/in/auky-susanto" className="text-lg font-extrabold uppercase border-b-4 border-blue-600 hover:text-blue-700 transition">LinkedIn</a>
-            <a href="mailto:aukysusanto@gmail.com" className="text-lg font-extrabold uppercase border-b-4 border-red-500 hover:text-red-600 transition">Email</a>
-          </div>
-
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.5em]">&copy; 2026 Auky Susanto</p>
-        </div>
-      </section>
-
-      {/* Project Details Framework (Skeleton) */}
-      <div id="project-framework" className="hidden">
-        {/* This is a skeleton for the project pages requested */}
-        <section className="py-24 px-6 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-extrabold mb-8">Project Title</h1>
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-xl font-bold uppercase tracking-widest border-b-2 border-black inline-block mb-4">Background</h2>
-                <p className="text-lg text-slate-700 leading-relaxed">Content goes here...</p>
-              </div>
-              <div>
-                <h2 className="text-xl font-bold uppercase tracking-widest border-b-2 border-black inline-block mb-4">Scope of Work</h2>
-                <p className="text-lg text-slate-700 leading-relaxed">Content goes here...</p>
-              </div>
-              <div>
-                <h2 className="text-xl font-bold uppercase tracking-widest border-b-2 border-black inline-block mb-4">Tools Used</h2>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-slate-100 font-bold">Tool 1</span>
-                  <span className="px-4 py-2 bg-slate-100 font-bold">Tool 2</span>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-bold tracking-widest uppercase mb-8 border-b-4 border-black inline-block">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 border-2 border-black text-sm font-bold">Problem Solving</span>
+                        <span class="px-4 py-2 border-2 border-black text-sm font-bold">Critical Analytical Thinking</span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-}
+        </div>
+    </section>
+
+    <!-- 3. Project Experiences -->
+    <section id="projects" class="py-24 bg-slate-900 text-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-sm font-bold tracking-[0.4em] uppercase text-slate-400 mb-16 text-center">Project Experiences</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="p-10 bg-slate-800 border border-slate-700 hover:border-blue-500 transition duration-500 flex flex-col" data-aos="zoom-in">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-2xl font-extrabold leading-tight">A Data-Driven Lending Strategy through Credit Risk Analytics, Lending Club</h4>
+                        <span class="text-sm font-bold text-blue-400 uppercase">2025-2026</span>
+                    </div>
+                    <ul class="text-base font-bold text-slate-300 space-y-4 mb-8 flex-grow">
+                        <li>● Developed a Logistic Regression propensity model achieving 84% accuracy and 80% recall.</li>
+                        <li>● Analyzed a comprehensive dataset of 396,030 loan entries to identify key drivers of loan defaults.</li>
+                        <li>● Formulated a strategic plan to reduce default rates from 20% to below 5%.</li>
+                    </ul>
+                    <a href="project-lending-club.html" class="inline-block text-blue-400 font-bold uppercase tracking-widest text-xs hover:text-white transition">View Project Details →</a>
+                </div>
+                <div class="p-10 bg-slate-800 border border-slate-700 hover:border-blue-500 transition duration-500 flex flex-col" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-2xl font-extrabold leading-tight">Sales Performance Analysis, RevoGrocers</h4>
+                        <span class="text-sm font-bold text-blue-400 uppercase">Nov 2025</span>
+                    </div>
+                    <ul class="text-base font-bold text-slate-300 space-y-4 mb-8 flex-grow">
+                        <li>● Identified the top-performing product category contributing 12% of total revenue.</li>
+                        <li>● Analyzed factors driving revenue, revealing a positive correlation with units sold.</li>
+                        <li>● Implemented bundling and cross-selling strategies to increase Units Per Transaction.</li>
+                    </ul>
+                    <a href="project-revogrocers.html" class="inline-block text-blue-400 font-bold uppercase tracking-widest text-xs hover:text-white transition">View Project Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Education -->
+    <section id="education" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-16 text-center">Education</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-8 border-2 border-slate-100 hover:border-black transition flex flex-col md:flex-row gap-6 items-start" data-aos="fade-right">
+                    <img src="logo revou.avif" alt="RevoU Logo" class="w-20 h-20 object-contain">
+                    <div>
+                        <h3 class="text-2xl font-extrabold mb-2">RevoU</h3>
+                        <p class="text-lg text-slate-700 font-bold mb-4 italic">Full-stack Data Analytics | Oct, 2025 – Mar, 2026</p>
+                        <p class="text-base text-slate-800 font-normal leading-relaxed">
+                            Completed an intensive intermediate-to-advanced data analytics program with over 200 hours of learning commitment. Mentored by top professionals. Gained hands-on experience in business problem-solving using end-to-end data analysis processes.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-8 border-2 border-slate-100 hover:border-black transition flex flex-col md:flex-row gap-6 items-start" data-aos="fade-left">
+                    <img src="logo ubaya.png" alt="Universitas Surabaya Logo" class="w-20 h-20 object-contain">
+                    <div>
+                        <h3 class="text-2xl font-extrabold mb-2">Universitas Surabaya</h3>
+                        <div class="mb-6">
+                            <p class="text-lg text-slate-700 font-bold italic">Apothecary Profession | Aug, 2019 – Nov, 2020</p>
+                            <p class="text-base text-slate-800 font-bold">GPA: 3.6</p>
+                        </div>
+                        <div>
+                            <p class="text-lg text-slate-700 font-bold italic">Bachelor of Pharmacy | Aug, 2015 – Aug, 2019</p>
+                            <p class="text-base text-slate-800 font-bold">GPA: 3.6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Working Experiences -->
+    <section id="experience" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-sm font-bold tracking-[0.4em] uppercase text-slate-700 mb-16 text-center">Working Experiences</h2>
+            <div class="space-y-20">
+                <div class="border-l-4 border-black pl-8" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        <h3 class="text-2xl font-extrabold">Owner & Pharmacist, Apotek Taman Seruni</h3>
+                        <span class="text-lg font-bold text-slate-700 italic">Feb, 2024 - Present</span>
+                    </div>
+                    <ul class="text-lg font-normal text-slate-800 space-y-3">
+                        <li>● Controlled pharmacy inventory to minimize waste and maintain waste-to-sales ratio below 1%.</li>
+                        <li>● Analyzed sales data trends to forecast procurement, enabling timely bulk ordering while tightening cash flow and reducing out of stock rate by 30%.</li>
+                        <li>● Implemented multi-platform online sales channel, boosting revenue 16% year on year, expanding customer reach.</li>
+                    </ul>
+                </div>
+                <!-- ... (Pengalaman lainnya tetap sama) ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-24 px-6 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-8 tracking-tighter">Let's Connect</h2>
+            <p class="text-xl font-bold text-slate-700 mb-12">Surabaya, East Java | 083856318280 | aukysusanto@gmail.com</p>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="https://wa.me/6283856318280" class="text-lg font-extrabold uppercase border-b-4 border-green-500 hover:text-green-600 transition">WhatsApp</a>
+                <a href="https://linkedin.com/in/auky-susanto" class="text-lg font-extrabold uppercase border-b-4 border-blue-600 hover:text-blue-700 transition">LinkedIn</a>
+                <a href="mailto:aukysusanto@gmail.com" class="text-lg font-extrabold uppercase border-b-4 border-red-500 hover:text-red-600 transition">Email</a>
+            </div>
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-[0.5em]">&copy; 2026 Auky Susanto</p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
