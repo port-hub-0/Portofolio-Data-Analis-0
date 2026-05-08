@@ -572,10 +572,9 @@ disclaimer : "This project is a part of RevoU Data Insight Project, a 4-week cas
                         <img src="${project.image}" alt="${project.title}" class="w-full h-full object-contain">
                     </div>
 
-                    ${project.disclaimer ? `
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 italic text-sm text-slate-600">
-                        ${project.disclaimer}
-                    </div>` : ''}
+                    ${project.details.disclaimer ? ` 
+<div class="bg-blue-50 border-l-4 border-blue-600 p-4 italic text-sm text-slate-600"> ${project.details.disclaimer} 
+</div>` : ''}
 
                     <div class="grid md:grid-cols-2 gap-12">
                         <div class="space-y-8">
@@ -685,4 +684,4 @@ disclaimer : "This project is a part of RevoU Data Insight Project, a 4-week cas
         });
     </script>
 </body>
-</html> 
+</html>
